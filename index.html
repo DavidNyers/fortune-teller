@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" href="img/icon/favicon.ico">
+  <title>See your Future!</title>
+</head>
+
+<body>
+  <div class="wrapper-page">
+    <div class="form-group">
+      <div class="form-group-text " id="submit">
+        <div class="form-group-title">
+          <h1>See your Future!</h1>
+        </div>
+        <div class="form-group-tiles">
+          <label>Job Title:</label>
+          <input name="job-tilte" type="text" id="job-title" placeholder="Druglord ..." value="Designer">
+        </div>
+        <div class="form-group-tiles">
+          <label>Location:</label>
+          <input name="location" type="text" id="location" placeholder="Usbekistan ..." value="Vienna">
+        </div>
+        <div class="form-group-tiles">
+          <label>Partners Name:</label>
+          <input name="partners-name" type="text" id="partners-name" placeholder="Morganna ..." value="Tamara">
+        </div>
+        <div class="form-group-tiles">
+          <label>Childrens Number:</label>
+          <input type="number" id="childrens-number" placeholder=" 666 ..." value="">
+        </div>
+        <div class="form-button">
+          <input class="button" type="submit" onclick="crystalGazer()" value="Test Now" readonly="readonly">
+        </div>
+      </div>
+    </div>
+    <div class="output-form">
+      <div class="output-form-text">
+        <div class="form-group-title">
+          <h1>Your Future is ... </h1>
+        </div>
+        <div class="output-text">
+          <p id=job-title-output></p>
+          <p id="location-output"></p>
+          <p id="partners-name-output"></p>
+          <p id="childrens-number-output"></p>
+          <p id="lotto-output"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function crystalGazer() {
+
+      var job_title = document.getElementById("job-title").value;
+      var location = document.getElementById("location").value;
+      var partners_name = document.getElementById("partners-name").value;
+      var childrens_number = document.getElementById("childrens-number").value;
+
+      var age = Math.round(Math.random() * 40);
+
+      document.getElementById("job-title-output").innerHTML = "... that you Work as a " + job_title;
+      document.getElementById("location-output").innerHTML = "in " + location + ".";
+      document.getElementById("partners-name-output").innerHTML = "&nbsp;You´re married to " + partners_name;
+      document.getElementById("childrens-number-output").innerHTML = "with " + childrens_number + "&nbsp;Kids.";
+
+      var lottoRDM = Math.round(Math.random() * 100);
+      var lottotime = Math.round(Math.random() * 100);
+      var lotto = Math.round(Math.random() * 10);
+
+      if (lottoRDM < 50) {
+        document.getElementById("lotto-output").innerHTML = "In the next " + lottotime + " days, you will Win " + lotto + " Million € after that you will happily die in " + age + " years!";
+      } else {
+        document.getElementById("lotto-output").innerHTML = "In the next " + lottotime + " days, you will lose a Leg and you will die in " + age + " years!";
+      }
+    }
+  </script>
+</body>
+
+</html>
